@@ -3,13 +3,17 @@ import ChatBubble from './ChatBubble';
 import ChatInput from './ChatInput';
 import TypingIndicator from '../components/TypingIndicator/TypingIndicator';
 import { Container, Row, Col } from 'react-bootstrap';
-import axios from 'axios'; // For making HTTP requests
+import axios from 'axios';
 import './ChatWindow.css';
 
-function ChatWindow({ isSpeechEnabled , messages , setMessages , selectedLang }) {
+function ChatWindow({ isSpeechEnabled, messages, setMessages, selectedLang }) {
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef(null); // Ref for the end of the messages container
+  const messagesEndRef = useRef(null);
 
+  // Store the assistant's last response for quick replies
+  const [previousResponse, setPreviousResponse] = useState(null);
+
+  // Function to send user message
   const handleSend = async (userMessage) => {
     const userMessageObject = { text: userMessage, sender: 'user' };
     setMessages((prev) => [...prev, userMessageObject]);
@@ -21,11 +25,10 @@ function ChatWindow({ isSpeechEnabled , messages , setMessages , selectedLang })
         'http://10.10.1.136:3001/generate-prompt',
         { 
           query: userMessage, 
-          previous_response: null 
+          previous_response: previousResponse,
+          lang: selectedLang.toLowerCase()
         },
-        { 
-          headers: { "Content-Type": "application/json" } // Explicitly set JSON content type
-        }
+        { headers: { "Content-Type": "application/json" } }
       );
 
       const botMessageObject = {
@@ -34,24 +37,25 @@ function ChatWindow({ isSpeechEnabled , messages , setMessages , selectedLang })
       };
 
       setMessages((prev) => [...prev, botMessageObject]);
-      console.log(messages)
+      setPreviousResponse(response.data.response); // Update the previousResponse
     } catch (error) {
-      console.error("Error fetching bot response:", error);
       const errorMessages = {
         en: 'Sorry, something went wrong. Please try again later.',
         fr: 'Désolé, quelque chose a mal tourné. Veuillez réessayer plus tard.',
       };
-      
-      // Use the selected language to get the appropriate error message
       const errorMessage = {
-        text: errorMessages[selectedLang.toLowerCase()] || errorMessages.en, // Default to English if the selected language is not found
+        text: errorMessages[selectedLang.toLowerCase()] || errorMessages.en,
         sender: 'assistant',
       };
       setMessages((prev) => [...prev, errorMessage]);
     }
-    console.log(messages)
 
     setIsLoading(false);
+  };
+
+  // Function to handle quick replies
+  const handleQuickReply = (replyText) => {
+    handleSend(replyText);
   };
 
   useEffect(() => {
@@ -71,10 +75,11 @@ function ChatWindow({ isSpeechEnabled , messages , setMessages , selectedLang })
                   sender={message.sender}
                   isSpeechEnabled={isSpeechEnabled}
                   currentLang={selectedLang}
-                  isLastMessage={index === messages.length - 1} // Mark the last message
+                  isLastMessage={index === messages.length - 1}
+                  onQuickReply={handleQuickReply}
                 />
               ))}
-              {isLoading && <TypingIndicator />} {/* Display typing indicator when loading */}
+              {isLoading && <TypingIndicator />}
               <div ref={messagesEndRef} />
             </div>
             <ChatInput onSend={handleSend} isLoading={isLoading} selectedLang={selectedLang} />
