@@ -71,7 +71,7 @@ The interaction flow of the chatbot is as follows:
 
 #### Detailed Descriptions
 
-- `smart-contract` : using blockchain technolgy to store the chat history for a more secure storage.
+- `smart-contract` : using blockchain technolgy to store the chat history for a more secure storage coupled with the firebase database.
 - `chatbot-ui` : an amazing rensponsive chatbot UI in ReactJS custom-made to meet the requirements of the project like:
   - Text-to-speech and speech-to-text capabilities for users with visual impairments.
   - Multilingual support for both French and English.
