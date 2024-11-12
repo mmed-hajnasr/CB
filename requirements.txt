@@ -2,3 +2,4 @@ pandas
 numpy
 langchain_text_splitters
 PyPDF2
+chromadb
