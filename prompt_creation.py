@@ -1,4 +1,5 @@
 from langchain_chroma import Chroma
+import google.generativeai as genai
 from langchain_huggingface import HuggingFaceEmbeddings
 from singleton_metaclass import SingletonMeta
 from requests import post
@@ -57,24 +58,22 @@ here are the new results that you can present to the student: {filtered_results}
         filtered_results = [(doc, score) for doc, score in results if score > 0.3]
         return filtered_results
     
-    def get_llm_response(self,prompt):
-           #
-            response = post(PromptCreation.LLM_URL, json={"prompt":prompt})
-            if response.status_code == 200:
-                return response.json()["llmResponse"]
-            else : 
-                return None     
 
-    
+    def get_llm_response(self,prompt):
+        genai.configure(api_key="AIzaSyDsYW2ol6PB6RrNz9N0RTUyCLX8ZtzJhBM")
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        response = model.generate_content(prompt)
+        print(response.text)
+        
 
     def respond(self, query,previous_response=None):
         if query in ["oui", "yes","non","no"]:
             prompt = PromptCreation.PROMPT_IN_RESPONSE.format(previous_response=previous_response, user_response=query)
-            return self.get_llm_response(query,previous_response,prompt)
+            return self.get_llm_response(prompt),prompt
         elif query in ["plus d'informations", "more information"]:
             filtered_results = self.get_results(query, nb_results=5)
             prompt = PromptCreation.PROMPT_FOR_MORE_INFO.format(previous_response=previous_response, filtered_results=filtered_results)
-            return self.get_llm_response(query,previous_response,prompt)
+            return self.get_llm_response(prompt),prompt
         else :
             filtered_results = self.get_results(query)
             if filtered_results is None:
@@ -82,7 +81,7 @@ here are the new results that you can present to the student: {filtered_results}
             else : 
                 results = [doc.page_content for doc, _ in filtered_results]
                 prompt = PromptCreation.PROMPT_RESULTS_PRESENT.format(query=query, filtered_results=results)
-                return self.get_llm_response(query,previous_response,prompt)
+                return self.get_llm_response(prompt),prompt
         
         
     
