@@ -37,13 +37,14 @@ The interaction flow of the chatbot is as follows:
 ## File Structure
 
 ### Database server structure
+
 ```graphql
 
-├── raw_data/             
+├── raw_data/
 │   ├── *.pdf             # Original PDF files containing the full set of training data.
 │   └── *.csv             # Raw CSV files with structured training data.
 │
-├── new_data/             
+├── new_data/
 │   ├── *.pdf             # Selective PDF files with higher-quality content for training.
 │   └── *.csv             # Selective CSV files with refined data for improved training results.
 │
@@ -70,8 +71,11 @@ The interaction flow of the chatbot is as follows:
 
 #### Detailed Descriptions
 
--`chatbot-ui` : contains the ui interface for the chatbot with React.js containing the implementation of the TTS and STT functionalities.
--`smart-contract` : 
+- `smart-contract` : using blockchain technolgy to store the chat history for a more secure storage.
+- `chatbot-ui` : an amazing rensponsive chatbot UI in ReactJS custom-made to meet the requirements of the project like:
+  - Text-to-speech and speech-to-text capabilities for users with visual impairments.
+  - Multilingual support for both French and English.
+  - buttons for fast response in case of a question by the model.
 
 ## Features
 
