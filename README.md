@@ -36,6 +36,7 @@ The interaction flow of the chatbot is as follows:
 
 ## File Structure
 
+### Database server structure
 ```graphql
 
 ├── raw_data/             
@@ -54,7 +55,7 @@ The interaction flow of the chatbot is as follows:
 └── text_extraction.py    # Functions for OCR and extracting text from images and PDFs.
 ```
 
-### Detailed Descriptions
+#### Detailed Descriptions
 
 - `raw_data/` : This directory contains the complete set of original data files used for initial training. The contents include PDFs and CSVs that might contain noise or irrelevant sections that require further filtering.
 - `new_data/` : Contains a curated subset of the data from raw_data/, focusing on high-quality content to achieve better results in training. Files here are more selective and have undergone some manual refinement.
@@ -64,6 +65,13 @@ The interaction flow of the chatbot is as follows:
 - `prompt_resource.py` : A Flask-based web server that provides an API endpoint for prompt generation. It leverages prompt_creation.py to serve prompts dynamically, making it accessible for other applications.
 - `segmentation.py` : Cleans and segments documents to facilitate better text extraction. This includes removing headers, footers, and other non-content elements to improve the quality of text for downstream processing.
 - `text_extraction.py` : Contains OCR and text extraction functions. This module handles extracting text from scanned PDFs, images, and other non-text sources, converting them into a machine-readable format.
+
+### Client structure
+
+#### Detailed Descriptions
+
+-`chatbot-ui` : contains the ui interface for the chatbot with React.js containing the implementation of the TTS and STT functionalities.
+-`smart-contract` : 
 
 ## Features
 
