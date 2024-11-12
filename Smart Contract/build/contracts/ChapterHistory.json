@@ -1,0 +1,1401 @@
+{
+  "contractName": "ChapterHistory",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "chapterHistories",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "user",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "chapter",
+          "type": "string"
+        }
+      ],
+      "name": "ChapterHistoryAdded",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "chapter",
+          "type": "string"
+        }
+      ],
+      "name": "addChapterHistory",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getChapterHistories",
+      "outputs": [
+        {
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.1+commit.c8a2cb62\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"chapter\",\"type\":\"string\"}],\"name\":\"addChapterHistory\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getChapterHistories\",\"outputs\":[{\"name\":\"\",\"type\":\"string[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"},{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"chapterHistories\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"user\",\"type\":\"address\"},{\"indexed\":false,\"name\":\"chapter\",\"type\":\"string\"}],\"name\":\"ChapterHistoryAdded\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ChatHistory.sol\":\"ChapterHistory\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ChatHistory.sol\":{\"keccak256\":\"0x256250aff3f5616b21fcd06a96f6713689743f62559f4c372763a633d0eac6a9\",\"urls\":[\"bzzr://dd3dcd83f7514e03727c3123e0f114f97b6d70f18a36f9cd20902cb31c69582c\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061065b806100206000396000f3fe608060405260043610610050577c010000000000000000000000000000000000000000000000000000000060003504632974e7da811461005557806356fc51d6146100775780635e7ef870146100a2575b600080fd5b34801561006157600080fd5b5061007561007036600461041d565b6100cf565b005b34801561008357600080fd5b5061008c610140565b6040516100999190610525565b60405180910390f35b3480156100ae57600080fd5b506100c26100bd3660046103e3565b610222565b6040516100999190610536565b336000908152602081815260408220805460018101808355918452928290208451919361010293910191908501906102d8565b50507f35b73f9ab0bcf0d17de4a4c274a62c5079a6141996a20d21fc291e20ff327f0a3382604051610135929190610505565b60405180910390a150565b33600090815260208181526040808320805482518185028101850190935280835260609492939192909184015b828210156102185760008481526020908190208301805460408051601f60026000196101006001871615020190941693909304928301859004850281018501909152818152928301828280156102045780601f106101d957610100808354040283529160200191610204565b820191906000526020600020905b8154815290600101906020018083116101e757829003601f168201915b50505050508152602001906001019061016d565b5050505090505b90565b60006020528160005260406000208181548110151561023d57fe5b600091825260209182902001805460408051601f600260001961010060018716150201909416939093049283018590048502810185019091528181529450909250908301828280156102d05780601f106102a5576101008083540402835291602001916102d0565b820191906000526020600020905b8154815290600101906020018083116102b357829003601f168201915b505050505081565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031957805160ff1916838001178555610346565b82800160010185558215610346579182015b8281111561034657825182559160200191906001019061032b565b50610352929150610356565b5090565b61021f91905b80821115610352576000815560010161035c565b600061037c82356105b9565b9392505050565b6000601f8201831361039457600080fd5b81356103a76103a28261056e565b610547565b915080825260208301602083018583830111156103c357600080fd5b6103ce8382846105db565b50505092915050565b600061037c823561021f565b600080604083850312156103f657600080fd5b60006104028585610370565b9250506020610413858286016103d7565b9150509250929050565b60006020828403121561042f57600080fd5b813567ffffffffffffffff81111561044657600080fd5b61045284828501610383565b949350505050565b610463816105ca565b82525050565b60006104748261059c565b8084526020840193508360208202850161048d85610596565b60005b848110156104c45783830388526104a88383516104d0565b92506104b382610596565b602098909801979150600101610490565b50909695505050505050565b60006104db8261059c565b8084526104ef8160208601602086016105e7565b6104f881610617565b9093016020019392505050565b60408101610513828561045a565b818103602083015261045281846104d0565b6020808252810161037c8184610469565b6020808252810161037c81846104d0565b60405181810167ffffffffffffffff8111828210171561056657600080fd5b604052919050565b600067ffffffffffffffff82111561058557600080fd5b506020601f91909101601f19160190565b60200190565b5190565b73ffffffffffffffffffffffffffffffffffffffff1690565b60006105c4826105a0565b92915050565b60006105c48260006105c4826105b9565b82818337506000910152565b60005b838110156106025781810151838201526020016105ea565b83811115610611576000848401525b50505050565b601f01601f19169056fea265627a7a723058207269502bcbbf9fc3d5104e772ce29184e3f5f13ad911fda6d44b4147246188766c6578706572696d656e74616cf50037",
+  "deployedBytecode": "0x608060405260043610610050577c010000000000000000000000000000000000000000000000000000000060003504632974e7da811461005557806356fc51d6146100775780635e7ef870146100a2575b600080fd5b34801561006157600080fd5b5061007561007036600461041d565b6100cf565b005b34801561008357600080fd5b5061008c610140565b6040516100999190610525565b60405180910390f35b3480156100ae57600080fd5b506100c26100bd3660046103e3565b610222565b6040516100999190610536565b336000908152602081815260408220805460018101808355918452928290208451919361010293910191908501906102d8565b50507f35b73f9ab0bcf0d17de4a4c274a62c5079a6141996a20d21fc291e20ff327f0a3382604051610135929190610505565b60405180910390a150565b33600090815260208181526040808320805482518185028101850190935280835260609492939192909184015b828210156102185760008481526020908190208301805460408051601f60026000196101006001871615020190941693909304928301859004850281018501909152818152928301828280156102045780601f106101d957610100808354040283529160200191610204565b820191906000526020600020905b8154815290600101906020018083116101e757829003601f168201915b50505050508152602001906001019061016d565b5050505090505b90565b60006020528160005260406000208181548110151561023d57fe5b600091825260209182902001805460408051601f600260001961010060018716150201909416939093049283018590048502810185019091528181529450909250908301828280156102d05780601f106102a5576101008083540402835291602001916102d0565b820191906000526020600020905b8154815290600101906020018083116102b357829003601f168201915b505050505081565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061031957805160ff1916838001178555610346565b82800160010185558215610346579182015b8281111561034657825182559160200191906001019061032b565b50610352929150610356565b5090565b61021f91905b80821115610352576000815560010161035c565b600061037c82356105b9565b9392505050565b6000601f8201831361039457600080fd5b81356103a76103a28261056e565b610547565b915080825260208301602083018583830111156103c357600080fd5b6103ce8382846105db565b50505092915050565b600061037c823561021f565b600080604083850312156103f657600080fd5b60006104028585610370565b9250506020610413858286016103d7565b9150509250929050565b60006020828403121561042f57600080fd5b813567ffffffffffffffff81111561044657600080fd5b61045284828501610383565b949350505050565b610463816105ca565b82525050565b60006104748261059c565b8084526020840193508360208202850161048d85610596565b60005b848110156104c45783830388526104a88383516104d0565b92506104b382610596565b602098909801979150600101610490565b50909695505050505050565b60006104db8261059c565b8084526104ef8160208601602086016105e7565b6104f881610617565b9093016020019392505050565b60408101610513828561045a565b818103602083015261045281846104d0565b6020808252810161037c8184610469565b6020808252810161037c81846104d0565b60405181810167ffffffffffffffff8111828210171561056657600080fd5b604052919050565b600067ffffffffffffffff82111561058557600080fd5b506020601f91909101601f19160190565b60200190565b5190565b73ffffffffffffffffffffffffffffffffffffffff1690565b60006105c4826105a0565b92915050565b60006105c48260006105c4826105b9565b82818337506000910152565b60005b838110156106025781810151838201526020016105ea565b83811115610611576000848401525b50505050565b601f01601f19169056fea265627a7a723058207269502bcbbf9fc3d5104e772ce29184e3f5f13ad911fda6d44b4147246188766c6578706572696d656e74616cf50037",
+  "sourceMap": "104:659:0:-;;;194:29;8:9:-1;5:2;;;30:1;27;20:12;5:2;194:29:0;104:659;;;;;;",
+  "deployedSourceMap": "104:659:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;398:174;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;398:174:0;;;;;;;;:::i;:::-;;637:123;;8:9:-1;5:2;;;30:1;27;20:12;5:2;637:123:0;;;:::i;:::-;;;;;;;;;;;;;;;;135:52;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;135:52:0;;;;;;;;:::i;:::-;;;;;;;;398:174;483:10;466:16;:28;;;;;;;;;;27:10:-1;;39:1;23:18;;45:23;;;466:42:0;;;;;;;;;23:18:-1;;466:42:0;;;;;;;;;;:::i;:::-;;;524:40;544:10;556:7;524:40;;;;;;;;;;;;;;;;398:174;:::o;637:123::-;741:10;724:16;:28;;;;;;;;;;;717:35;;;;;;;;;;;;;;;;;689:15;;717:35;;724:28;;717:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;717:35:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;637:123;;:::o;135:52::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;135:52:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;135:52:0;;-1:-1:-1;135:52:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;104:659::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;104:659:0;;;-1:-1:-1;104:659:0;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;5:118:-1;;72:46;110:6;97:20;72:46;;;63:55;57:66;-1:-1;;;57:66;131:442;;226:4;214:17;;210:27;-1:-1;200:2;;251:1;248;241:12;200:2;288:6;275:20;310:65;325:49;367:6;325:49;;;310:65;;;301:74;;395:6;388:5;381:21;431:4;423:6;419:17;464:4;457:5;453:16;499:3;490:6;485:3;481:16;478:25;475:2;;;516:1;513;506:12;475:2;526:41;560:6;555:3;550;526:41;;;193:380;;;;;;;;581:118;;648:46;686:6;673:20;648:46;;706:366;;;827:2;815:9;806:7;802:23;798:32;795:2;;;843:1;840;833:12;795:2;878:1;895:53;940:7;920:9;895:53;;;885:63;;857:97;985:2;1003:53;1048:7;1039:6;1028:9;1024:22;1003:53;;;993:63;;964:98;789:283;;;;;;1079:347;;1193:2;1181:9;1172:7;1168:23;1164:32;1161:2;;;1209:1;1206;1199:12;1161:2;1244:31;;1295:18;1284:30;;1281:2;;;1327:1;1324;1317:12;1281:2;1347:63;1402:7;1393:6;1382:9;1378:22;1347:63;;;1337:73;1155:271;-1:-1;;;;1155:271;1433:132;1514:45;1553:5;1514:45;;;1509:3;1502:58;1496:69;;;1601:773;;1748:60;1802:5;1748:60;;;1826:6;1821:3;1814:19;1850:4;1845:3;1841:14;1834:21;;1898:3;1940:4;1932:6;1928:17;1923:3;1919:27;1966:62;2022:5;1966:62;;;2049:1;2034:301;2059:6;2056:1;2053:13;2034:301;;;2121:9;2115:4;2111:20;2106:3;2099:33;2147:70;2212:4;2203:6;2197:13;2147:70;;;2139:78;;2234:66;2293:6;2234:66;;;2323:4;2314:14;;;;;2224:76;-1:-1;2081:1;2074:9;2034:301;;;-1:-1;2348:4;;1727:647;-1:-1;;;;;;1727:647;2382:300;;2484:39;2517:5;2484:39;;;2540:6;2535:3;2528:19;2552:63;2608:6;2601:4;2596:3;2592:14;2585:4;2578:5;2574:16;2552:63;;;2647:29;2669:6;2647:29;;;2627:50;;;2640:4;2627:50;;2464:218;-1:-1;;;2464:218;2988:398;3152:2;3137:18;;3166:69;3141:9;3208:6;3166:69;;;3283:9;3277:4;3273:20;3268:2;3257:9;3253:18;3246:48;3308:68;3371:4;3362:6;3308:68;;3393:365;3563:2;3577:47;;;3548:18;;3638:110;3548:18;3734:6;3638:110;;3765:273;3889:2;3903:47;;;3874:18;;3964:64;3874:18;4014:6;3964:64;;4045:256;4107:2;4101:9;4133:17;;;4208:18;4193:34;;4229:22;;;4190:62;4187:2;;;4265:1;4262;4255:12;4187:2;4281;4274:22;4085:216;;-1:-1;4085:216;4308:259;;4452:18;4444:6;4441:30;4438:2;;;4484:1;4481;4474:12;4438:2;-1:-1;4557:4;4528;4505:17;;;;-1:-1;;4501:33;4547:15;;4375:192;4576:127;4691:4;4679:17;;4660:43;4712:113;4808:12;;4792:33;5163:128;5243:42;5232:54;;5215:76;5298:105;;5367:31;5392:5;5367:31;;;5356:42;5350:53;-1:-1;;5350:53;5496:129;;5583:37;5614:5;5632:121;5711:37;5742:5;5711:37;;5883:145;5964:6;5959:3;5954;5941:30;-1:-1;6020:1;6002:16;;5995:27;5934:94;6037:268;6102:1;6109:101;6123:6;6120:1;6117:13;6109:101;;;6190:11;;;6184:18;6171:11;;;6164:39;6145:2;6138:10;6109:101;;;6225:6;6222:1;6219:13;6216:2;;;6290:1;6281:6;6276:3;6272:16;6265:27;6216:2;6086:219;;;;;6313:97;6401:2;6381:14;-1:-1;;6377:28;;6361:49",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.22 <0.9.0;\r\npragma experimental ABIEncoderV2;\r\n\r\ncontract ChapterHistory {\r\n    mapping(address => string[]) public chapterHistories;\r\n    constructor() public {\r\n    }\r\n    // Event to emit when chapter history is added\r\n    event ChapterHistoryAdded(address user, string chapter);\r\n\r\n    // Function to add a chapter history for a user\r\n    function addChapterHistory(string memory chapter) public {\r\n        chapterHistories[msg.sender].push(chapter);\r\n        emit ChapterHistoryAdded(msg.sender, chapter);\r\n    }\r\n\r\n    // Function to get all chapter histories for a user\r\n    function getChapterHistories() public view returns (string[] memory) {\r\n        return chapterHistories[msg.sender];\r\n    }\r\n}\r\n",
+  "sourcePath": "C:\\Users\\bouss\\Desktop\\Hackaton\\Smart Contract\\contracts\\ChatHistory.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ChatHistory.sol",
+    "exportedSymbols": {
+      "ChapterHistory": [
+        50
+      ]
+    },
+    "id": 51,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "id": 2,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "67:33:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 50,
+        "linearizedBaseContracts": [
+          50
+        ],
+        "name": "ChapterHistory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 7,
+            "name": "chapterHistories",
+            "nodeType": "VariableDeclaration",
+            "scope": 50,
+            "src": "135:52:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_string_storage_$dyn_storage_$",
+              "typeString": "mapping(address => string[])"
+            },
+            "typeName": {
+              "id": 6,
+              "keyType": {
+                "id": 3,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "143:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "135:28:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_string_storage_$dyn_storage_$",
+                "typeString": "mapping(address => string[])"
+              },
+              "valueType": {
+                "baseType": {
+                  "id": 4,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "154:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "id": 5,
+                "length": null,
+                "nodeType": "ArrayTypeName",
+                "src": "154:8:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                  "typeString": "string[]"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 10,
+              "nodeType": "Block",
+              "src": "215:8:0",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 11,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 8,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "205:2:0"
+            },
+            "returnParameters": {
+              "id": 9,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "215:0:0"
+            },
+            "scope": 50,
+            "src": "194:29:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 17,
+            "name": "ChapterHistoryAdded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 16,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13,
+                  "indexed": false,
+                  "name": "user",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17,
+                  "src": "307:12:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 12,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "307:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15,
+                  "indexed": false,
+                  "name": "chapter",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17,
+                  "src": "321:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 14,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "321:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "306:30:0"
+            },
+            "src": "281:56:0"
+          },
+          {
+            "body": {
+              "id": 36,
+              "nodeType": "Block",
+              "src": "455:117:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 27,
+                        "name": "chapter",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19,
+                        "src": "500:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 22,
+                          "name": "chapterHistories",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 7,
+                          "src": "466:16:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_string_storage_$dyn_storage_$",
+                            "typeString": "mapping(address => string storage ref[] storage ref)"
+                          }
+                        },
+                        "id": 25,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 23,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 65,
+                            "src": "483:3:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 24,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "483:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "466:28:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                          "typeString": "string storage ref[] storage ref"
+                        }
+                      },
+                      "id": 26,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "466:33:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_string_storage_$returns$_t_uint256_$",
+                        "typeString": "function (string storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 28,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "466:42:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 29,
+                  "nodeType": "ExpressionStatement",
+                  "src": "466:42:0"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 31,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 65,
+                          "src": "544:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 32,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "544:10:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 33,
+                        "name": "chapter",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19,
+                        "src": "556:7:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "id": 30,
+                      "name": "ChapterHistoryAdded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17,
+                      "src": "524:19:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (address,string memory)"
+                      }
+                    },
+                    "id": 34,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "524:40:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 35,
+                  "nodeType": "EmitStatement",
+                  "src": "519:45:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 37,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addChapterHistory",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 20,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 19,
+                  "name": "chapter",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 37,
+                  "src": "425:21:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "425:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "424:23:0"
+            },
+            "returnParameters": {
+              "id": 21,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "455:0:0"
+            },
+            "scope": 50,
+            "src": "398:174:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 48,
+              "nodeType": "Block",
+              "src": "706:54:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 43,
+                      "name": "chapterHistories",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7,
+                      "src": "724:16:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_array$_t_string_storage_$dyn_storage_$",
+                        "typeString": "mapping(address => string storage ref[] storage ref)"
+                      }
+                    },
+                    "id": 46,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 44,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 65,
+                        "src": "741:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 45,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "741:10:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "724:28:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
+                      "typeString": "string storage ref[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 42,
+                  "id": 47,
+                  "nodeType": "Return",
+                  "src": "717:35:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 49,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getChapterHistories",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 38,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "665:2:0"
+            },
+            "returnParameters": {
+              "id": 42,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 49,
+                  "src": "689:15:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_memory_$dyn_memory_ptr",
+                    "typeString": "string[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 39,
+                      "name": "string",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "689:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string"
+                      }
+                    },
+                    "id": 40,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "689:8:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                      "typeString": "string[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "688:17:0"
+            },
+            "scope": 50,
+            "src": "637:123:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 51,
+        "src": "104:659:0"
+      }
+    ],
+    "src": "33:732:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/ChatHistory.sol",
+      "exportedSymbols": {
+        "ChapterHistory": [
+          50
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".22",
+            "<",
+            "0.9",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "33:32:0"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "experimental",
+            "ABIEncoderV2"
+          ]
+        },
+        "id": 2,
+        "name": "PragmaDirective",
+        "src": "67:33:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            50
+          ],
+          "name": "ChapterHistory",
+          "scope": 51
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "chapterHistories",
+              "scope": 50,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(address => string[])",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(address => string[])"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "address",
+                      "type": "address"
+                    },
+                    "id": 3,
+                    "name": "ElementaryTypeName",
+                    "src": "143:7:0"
+                  },
+                  {
+                    "attributes": {
+                      "length": null,
+                      "type": "string[]"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 4,
+                        "name": "ElementaryTypeName",
+                        "src": "154:6:0"
+                      }
+                    ],
+                    "id": 5,
+                    "name": "ArrayTypeName",
+                    "src": "154:8:0"
+                  }
+                ],
+                "id": 6,
+                "name": "Mapping",
+                "src": "135:28:0"
+              }
+            ],
+            "id": 7,
+            "name": "VariableDeclaration",
+            "src": "135:52:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 50,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 8,
+                "name": "ParameterList",
+                "src": "205:2:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 9,
+                "name": "ParameterList",
+                "src": "215:0:0"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 10,
+                "name": "Block",
+                "src": "215:8:0"
+              }
+            ],
+            "id": 11,
+            "name": "FunctionDefinition",
+            "src": "194:29:0"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "ChapterHistoryAdded"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "user",
+                      "scope": 17,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 12,
+                        "name": "ElementaryTypeName",
+                        "src": "307:7:0"
+                      }
+                    ],
+                    "id": 13,
+                    "name": "VariableDeclaration",
+                    "src": "307:12:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "chapter",
+                      "scope": 17,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 14,
+                        "name": "ElementaryTypeName",
+                        "src": "321:6:0"
+                      }
+                    ],
+                    "id": 15,
+                    "name": "VariableDeclaration",
+                    "src": "321:14:0"
+                  }
+                ],
+                "id": 16,
+                "name": "ParameterList",
+                "src": "306:30:0"
+              }
+            ],
+            "id": 17,
+            "name": "EventDefinition",
+            "src": "281:56:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "addChapterHistory",
+              "scope": 50,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "chapter",
+                      "scope": 37,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "string",
+                          "type": "string"
+                        },
+                        "id": 18,
+                        "name": "ElementaryTypeName",
+                        "src": "425:6:0"
+                      }
+                    ],
+                    "id": 19,
+                    "name": "VariableDeclaration",
+                    "src": "425:21:0"
+                  }
+                ],
+                "id": 20,
+                "name": "ParameterList",
+                "src": "424:23:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 21,
+                "name": "ParameterList",
+                "src": "455:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (string storage ref) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "type": "string storage ref[] storage ref"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 7,
+                                      "type": "mapping(address => string storage ref[] storage ref)",
+                                      "value": "chapterHistories"
+                                    },
+                                    "id": 22,
+                                    "name": "Identifier",
+                                    "src": "466:16:0"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "sender",
+                                      "referencedDeclaration": null,
+                                      "type": "address payable"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 65,
+                                          "type": "msg",
+                                          "value": "msg"
+                                        },
+                                        "id": 23,
+                                        "name": "Identifier",
+                                        "src": "483:3:0"
+                                      }
+                                    ],
+                                    "id": 24,
+                                    "name": "MemberAccess",
+                                    "src": "483:10:0"
+                                  }
+                                ],
+                                "id": 25,
+                                "name": "IndexAccess",
+                                "src": "466:28:0"
+                              }
+                            ],
+                            "id": 26,
+                            "name": "MemberAccess",
+                            "src": "466:33:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 19,
+                              "type": "string memory",
+                              "value": "chapter"
+                            },
+                            "id": 27,
+                            "name": "Identifier",
+                            "src": "500:7:0"
+                          }
+                        ],
+                        "id": 28,
+                        "name": "FunctionCall",
+                        "src": "466:42:0"
+                      }
+                    ],
+                    "id": 29,
+                    "name": "ExpressionStatement",
+                    "src": "466:42:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                },
+                                {
+                                  "typeIdentifier": "t_string_memory_ptr",
+                                  "typeString": "string memory"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 17,
+                              "type": "function (address,string memory)",
+                              "value": "ChapterHistoryAdded"
+                            },
+                            "id": 30,
+                            "name": "Identifier",
+                            "src": "524:19:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 65,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 31,
+                                "name": "Identifier",
+                                "src": "544:3:0"
+                              }
+                            ],
+                            "id": 32,
+                            "name": "MemberAccess",
+                            "src": "544:10:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 19,
+                              "type": "string memory",
+                              "value": "chapter"
+                            },
+                            "id": 33,
+                            "name": "Identifier",
+                            "src": "556:7:0"
+                          }
+                        ],
+                        "id": 34,
+                        "name": "FunctionCall",
+                        "src": "524:40:0"
+                      }
+                    ],
+                    "id": 35,
+                    "name": "EmitStatement",
+                    "src": "519:45:0"
+                  }
+                ],
+                "id": 36,
+                "name": "Block",
+                "src": "455:117:0"
+              }
+            ],
+            "id": 37,
+            "name": "FunctionDefinition",
+            "src": "398:174:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getChapterHistories",
+              "scope": 50,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 38,
+                "name": "ParameterList",
+                "src": "665:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 49,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "string[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "string[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "string",
+                              "type": "string"
+                            },
+                            "id": 39,
+                            "name": "ElementaryTypeName",
+                            "src": "689:6:0"
+                          }
+                        ],
+                        "id": 40,
+                        "name": "ArrayTypeName",
+                        "src": "689:8:0"
+                      }
+                    ],
+                    "id": 41,
+                    "name": "VariableDeclaration",
+                    "src": "689:15:0"
+                  }
+                ],
+                "id": 42,
+                "name": "ParameterList",
+                "src": "688:17:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 42
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "string storage ref[] storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7,
+                              "type": "mapping(address => string storage ref[] storage ref)",
+                              "value": "chapterHistories"
+                            },
+                            "id": 43,
+                            "name": "Identifier",
+                            "src": "724:16:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 65,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 44,
+                                "name": "Identifier",
+                                "src": "741:3:0"
+                              }
+                            ],
+                            "id": 45,
+                            "name": "MemberAccess",
+                            "src": "741:10:0"
+                          }
+                        ],
+                        "id": 46,
+                        "name": "IndexAccess",
+                        "src": "724:28:0"
+                      }
+                    ],
+                    "id": 47,
+                    "name": "Return",
+                    "src": "717:35:0"
+                  }
+                ],
+                "id": 48,
+                "name": "Block",
+                "src": "706:54:0"
+              }
+            ],
+            "id": 49,
+            "name": "FunctionDefinition",
+            "src": "637:123:0"
+          }
+        ],
+        "id": 50,
+        "name": "ContractDefinition",
+        "src": "104:659:0"
+      }
+    ],
+    "id": 51,
+    "name": "SourceUnit",
+    "src": "33:732:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.1+commit.c8a2cb62.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x41B748dA542b460288079B42A2aE3fFe06521a5c",
+      "transactionHash": "0x4694aeeaafac9e1de149d10de5a1aa86364b47591949a5adb67e4aaabe91e839"
+    }
+  },
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-11-12T03:49:20.178Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
