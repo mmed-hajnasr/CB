@@ -14,7 +14,7 @@ if not os.path.exists(PERSISIST_DIRECTORY):
     os.makedirs(PERSISIST_DIRECTORY)
 
 
-embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+embedding_model = HuggingFaceEmbeddings(model_name="pvl/labse_bert")
 
 vectorstore = Chroma(
     collection_name="pdf_collection",
@@ -49,25 +49,20 @@ def get_chunks(text):
     return splitter.split_text(text)
 
 current_directory = os.getcwd()
-pdf_files = glob.glob(os.path.join(current_directory, 'raw_data', '*.pdf'))
-csv_files = glob.glob(os.path.join(current_directory, 'raw_data', '*.csv'))
+pdf_files = glob.glob(os.path.join(current_directory, 'new_data', '*.pdf'))
+csv_files = glob.glob(os.path.join(current_directory, 'new_data', '*.csv'))
 
 for pdf_file in pdf_files:
     text, metadata = extract_text_from_pdf(pdf_file)
     if not text.strip():
-        print(f"No text extracted from {pdf_file}")
         continue
-    print(f"Extracted text from {pdf_file}: {text[:100]}...")  
     chunks = get_chunks(text)
     if not chunks:
-        print(f"No chunks created from {pdf_file}")
         continue
 
     documents = [Document(page_content=chunk, metadata=metadata) for chunk in chunks]
-    print(f"Created {len(documents)} documents from {pdf_file}")
     try:
         vectorstore.add_documents(documents)
-        print(f"Added {len(documents)} documents from {pdf_file} to the vector store")
     except Exception as e:
         print(f"Error adding documents from {pdf_file} to the vector store: {e}")
 
@@ -77,16 +72,13 @@ for csv_file in csv_files:
     if not text.strip():
         print(f"No text extracted from {csv_file}")
         continue
-    print(f"Extracted text from {csv_file}: {text[:100]}...")  
     chunks = get_chunks(text)
     if not chunks:
         print(f"No chunks created from {csv_file}")
         continue
 
     documents = [Document(page_content=chunk, metadata={'Source': csv_file}) for chunk in chunks]
-    print(f"Created {len(documents)} documents from {csv_file}")
     try:
         vectorstore.add_documents(documents)
-        print(f"Added {len(documents)} documents from {csv_file} to the vector store")
     except Exception as e:
         print(f"Error adding documents from {csv_file} to the vector store: {e}")

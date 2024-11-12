@@ -34,6 +34,37 @@ The interaction flow of the chatbot is as follows:
 1. The LLM server uses only the information provided by the database to generate a context-aware response.
 1. The response is returned to the client and displayed to the user.
 
+## File Structure
+
+```graphql
+
+├── raw_data/             
+│   ├── *.pdf             # Original PDF files containing the full set of training data.
+│   └── *.csv             # Raw CSV files with structured training data.
+│
+├── new_data/             
+│   ├── *.pdf             # Selective PDF files with higher-quality content for training.
+│   └── *.csv             # Selective CSV files with refined data for improved training results.
+│
+├── database_creation.py  # Script for preprocessing data and generating the database using ChromaDB.
+├── flake.nix             # Nix configuration file for creating a reproducible development environment.
+├── prompt_creation.py    # Script for generating prompts by querying the database.
+├── prompt_resource.py    # Flask-based server for providing prompt generation as a REST API.
+├── segmentation.py       # Script for cleaning and segmenting documents to enhance text extraction.
+└── text_extraction.py    # Functions for OCR and extracting text from images and PDFs.
+```
+
+### Detailed Descriptions
+
+- `raw_data/` : This directory contains the complete set of original data files used for initial training. The contents include PDFs and CSVs that might contain noise or irrelevant sections that require further filtering.
+- `new_data/` : Contains a curated subset of the data from raw_data/, focusing on high-quality content to achieve better results in training. Files here are more selective and have undergone some manual refinement.
+- `database_creation.py` : Preprocesses the raw data and creates an embedded database using ChromaDB. This includes cleaning, tokenizing, and storing text chunks for efficient retrieval.
+- `flake.nix` : Ensures the development environment is fully reproducible for Nix users. It specifies dependencies, libraries, and environment configurations, enabling consistent setups across different systems.
+- `prompt_creation.py` : Generates prompts by querying the ChromaDB database. This script is essential for transforming raw data into context-rich prompts used by the language model.
+- `prompt_resource.py` : A Flask-based web server that provides an API endpoint for prompt generation. It leverages prompt_creation.py to serve prompts dynamically, making it accessible for other applications.
+- `segmentation.py` : Cleans and segments documents to facilitate better text extraction. This includes removing headers, footers, and other non-content elements to improve the quality of text for downstream processing.
+- `text_extraction.py` : Contains OCR and text extraction functions. This module handles extracting text from scanned PDFs, images, and other non-text sources, converting them into a machine-readable format.
+
 ## Features
 
 - Accessibility:

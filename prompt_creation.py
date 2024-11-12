@@ -8,7 +8,7 @@ from requests import post
 class PromptCreation(metaclass = SingletonMeta) : 
 
     LLM_URL = "https://c437-35-185-245-5.ngrok-free.app/predict"
-    embedding_function = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    embedding_function = HuggingFaceEmbeddings(model_name="pvl/labse_bert")
     db = Chroma(collection_name="pdf_collection",persist_directory="chroma_storage", embedding_function=embedding_function)
 
     ZERO_RESULT_PROMPT  = """
