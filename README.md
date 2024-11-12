@@ -12,7 +12,7 @@
 - We are using GitHub for version control, with the project divided into three primary branches to facilitate development and maintain clear workflows:
   The project is composed of 3 main componenents :
 
-      - LLM:
+      - LLM (which can be found in the LLAMA git branch):
           
           Selecting a Local LLAMA Model : 
           In our project, the main priority was ensuring data privacy and security to comply with GDPR regulations. Hosting a large language model (LLM) locally allows us to avoid transmitting sensitive data over the internet, which reduces the risk of data leakage. This approach is particularly important in our use case, where we handle user-generated queries that might include sensitive information. Choosing a local model empowers us with full control over data management while ensuring privacy and compliance with regulatory standards.
@@ -36,7 +36,7 @@
           
           
 
-      - RAG Pipline:
+      - RAG Pipline (which can be found in the master git branch):
           
 
           This documentation describes the RAG (Retrieval-Augmented Generation) pipeline that powers the university chatbot, which leverages a local LLaMA-based Language Model (LLM) for answering user questions based on the extracted university data. 
@@ -91,7 +91,7 @@
 
           The RAG pipeline enhances the chatbot’s ability to deliver accurate answers by leveraging advanced embedding techniques and optimized vector storage. The use of `bge-m3` for embeddings and ChromaDB for vector storage has proven effective in providing reliable, high-quality responses in a user-friendly interface.
 
-      - ChatBot frontend : 
+      - ChatBot frontend (which can be found in UI branch): 
         We initially developed the chatbot using **Streamlit** for rapid prototyping, which allowed us to quickly implement core functionality. However, we soon encountered limitations with Streamlit, particularly its lack of flexibility in building a fully responsive and visually appealing user interface. This led us to switch to **React**, which offered us greater control over the design and functionality. With React, we were able to create a more dynamic, elegant, and user-friendly interface, ensuring a seamless experience across devices.
 
 The chatbot supports both **French** and **English**, providing users with an option to interact in their preferred language. To make the experience even more engaging and accessible, we integrated **text-to-speech** and **speech-to-text** capabilities. This allows users to interact with the chatbot through voice input and hear responses, catering to different accessibility needs and enhancing the overall user experience.
