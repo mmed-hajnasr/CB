@@ -19,7 +19,7 @@ embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 vectorstore = Chroma(
     collection_name="pdf_collection",
     embedding_function=embedding_model,
-    PERSISIST_DIRECTORY=PERSISIST_DIRECTORY
+    persist_directory=PERSISIST_DIRECTORY
 )
 
 
@@ -50,6 +50,7 @@ def get_chunks(text):
 
 current_directory = os.getcwd()
 pdf_files = glob.glob(os.path.join(current_directory, 'raw_data', '*.pdf'))
+csv_files = glob.glob(os.path.join(current_directory, 'raw_data', '*.csv'))
 
 for pdf_file in pdf_files:
     text, metadata = extract_text_from_pdf(pdf_file)
@@ -70,3 +71,22 @@ for pdf_file in pdf_files:
     except Exception as e:
         print(f"Error adding documents from {pdf_file} to the vector store: {e}")
 
+for csv_file in csv_files:
+    with open(csv_file, 'r') as file:
+        text = file.read()
+    if not text.strip():
+        print(f"No text extracted from {csv_file}")
+        continue
+    print(f"Extracted text from {csv_file}: {text[:100]}...")  
+    chunks = get_chunks(text)
+    if not chunks:
+        print(f"No chunks created from {csv_file}")
+        continue
+
+    documents = [Document(page_content=chunk, metadata={'Source': csv_file}) for chunk in chunks]
+    print(f"Created {len(documents)} documents from {csv_file}")
+    try:
+        vectorstore.add_documents(documents)
+        print(f"Added {len(documents)} documents from {csv_file} to the vector store")
+    except Exception as e:
+        print(f"Error adding documents from {csv_file} to the vector store: {e}")
